@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="FrameNavigationServiceSL.View.HomeView" 
+             
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400" Margin="0,1,0,-1"
+    
+    xmlns:lc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" 
+    xmlns:dxwuin="http://schemas.devexpress.com/winfx/2008/xaml/windowsui/navigation" 
+    xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui" 
+    xmlns:ViewModel="clr-namespace:FrameNavigationServiceSL.ViewModel" 
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" 
+    >
+
+    <!--DataContext for the current View-->
+    <UserControl.DataContext>
+        <ViewModel:HomeViewModel/>
+    </UserControl.DataContext>
+
+    <Grid>
+        <lc:TileLayoutControl>
+            <!--A click on a Tile must invoke a command for navigation to the DetailView.-->
+            <lc:Tile Size="Small" Command="{Binding NavigateDetailsCommand}">
+                <TextBlock Text="Details" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+            </lc:Tile>
+        </lc:TileLayoutControl>
+    </Grid>
+</UserControl>
+
